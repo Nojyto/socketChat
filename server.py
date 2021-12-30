@@ -1,3 +1,4 @@
+import os
 import sys
 from socket    import *
 from threading import Thread
@@ -12,6 +13,12 @@ except:
 	#HOST, PORT = "localhost", 4444
 	HOST, PORT = str(input("Host: ")), int(input("Port: "))
 
+
+def clearConsole():
+	cmnd = 'clear'
+	if os.name in ('nt', 'dos'):
+		cmnd = 'cls'
+	os.system(cmnd)
 
 def clientThread(conn, addr):
 	while True:
@@ -43,6 +50,7 @@ if __name__ == '__main__':
     s.listen(MAXUSERS)
     
     clients = []
+    clearConsole()
 
     try:
         print(f"[{curTime('%H:%M')}]<Server>Server started on {HOST}:{PORT}")
