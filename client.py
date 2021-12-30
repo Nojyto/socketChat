@@ -10,8 +10,8 @@ try:
 	HOST, PORT = sys.argv
 except:
 	print("Invalid cmd line options.")
-	HOST, PORT = "localhost", 4444
-	#HOST, PORT = str(input("Host: ")), int(input("Port: "))
+	#HOST, PORT = "localhost", 4444
+	HOST, PORT = str(input("Host: ")), int(input("Port: "))
 
 
 def printConsole():
